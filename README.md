@@ -1,56 +1,34 @@
 # CLI Task Manager
 
-A simple, powerful command-line task manager built with Python. Zero dependencies — just Python 3.6+.
+A fast, lightweight task manager that runs in your terminal. No installs, no accounts — just Python.
 
-## Features
-- Add tasks with priority, due dates, tags, and notes
-- Color-coded output with overdue warnings
-- Search, filter, and sort tasks
-- Progress stats with visual progress bar
+## Quick Start
 
-## Usage
 ```bash
-python tasks.py add "Your task" -p high -d 2026-06-01 -t work
+python tasks.py add "Your first task" -p high
 python tasks.py list
-python tasks.py done 1
-python tasks.py stats
-python tasks.py help
-` ``
+```
 
 ## Commands
-| Command | Description |
-|---|---|
-| `add` | Add a new task |
-| `list` | View tasks |
-| `done <id>` | Mark complete |
-| `delete <id>` | Delete a task |
-| `search <word>` | Search tasks |
-| `stats` | View progress |
-```
 
-**Step 2 — Now run these commands in your terminal:**
+| Command | Example | Description |
+|---|---|---|
+| `add` | `python tasks.py add "Buy milk" -p low` | Add a task |
+| `list` | `python tasks.py list` | View pending tasks |
+| `done` | `python tasks.py done 1` | Mark task complete |
+| `undone` | `python tasks.py undone 1` | Reopen a task |
+| `edit` | `python tasks.py edit 1 -p high` | Edit a task |
+| `delete` | `python tasks.py delete 1` | Delete a task |
+| `show` | `python tasks.py show 1` | View task details |
+| `search` | `python tasks.py search work` | Search tasks |
+| `clear` | `python tasks.py clear` | Remove completed tasks |
+| `stats` | `python tasks.py stats` | View progress |
 
-```bash
-git add tasks.py README.md
-git commit -m "Initial commit: CLI task manager"
-```
+## Flags
 
-**Step 3 — Then push to GitHub:**
-```bash
-git remote add origin https://github.com/YOURUSERNAME/cli-task-manager.git
-git branch -M main
-git push -u origin main
-```
-
----
-
-The error happened because `README.md` didn't exist when Git tried to add it. Git can only add files that are actually there. Now that you'll create it first, it'll work fine.
-
-Also notice `tasks_data.json` is showing as untracked — you don't want to commit that (it's your personal data). Run this first:
-
-```bash
-echo "tasks_data.json" > .gitignore
-git add .gitignore
-```
-
-Then do the `git add tasks.py README.md` step above. That keeps your task data private.
+| Flag | Description | Example |
+|---|---|---|
+| `-p` | Priority | `-p high / medium / low` |
+| `-d` | Due date | `-d 2026-06-30` |
+| `-t` | Tags | `-t work,urgent` |
+| `-n` | Notes | `-n "Check with team first"` |
